@@ -1,0 +1,34 @@
+button {
+  border-radius: 40px;
+  font-size: 30px;
+  width: 180px;
+  height: 50px;
+  border: none;
+  border-radius: 57px;
+  color: rgb(4, 20, 53);
+  background: linear-gradient(145deg, #a4ffff, #8adde6);
+  box-shadow: 2px 2px 4px #82d0d9, -2px -2px 4px #b0ffff;
+  align-self: center;
+  justify-self: center;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    border-radius: 57px;
+    background: linear-gradient(145deg, #d9ffff, #b7d7e6);
+    box-shadow: 2px 2px 4px #adcbd9, -2px -2px 4px #e9ffff;
+    color: rgb(255, 254, 230);
+  }
+  &.optionOne {
+    float: left;
+  }
+  &.optionTwo {
+    float: right;
+  }
+}
+canvas {
+  &.beforeGame {
+    display: none;
+  }
+}
