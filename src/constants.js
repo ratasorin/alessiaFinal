@@ -19,4 +19,6 @@ export const OFFSET_Y = -20;
  */
 export const OFFSET_X = 5;
 
-export const FRAME_DURATION = 1000 / 6;
+export const ACC = 5;
+export const friction = 0.925;
+export const FRAME_DURATION = 1000 / 60;

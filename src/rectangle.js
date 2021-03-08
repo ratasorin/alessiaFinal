@@ -1,4 +1,4 @@
-import { MOVE_SPEED } from "./constants";
+import { friction } from "./constants";
 
 /**
  * The **Rectangle** class defines the logic and methods for
@@ -10,22 +10,40 @@ export default class Rectangle {
     this.y = y;
     this.width = width;
     this.height = height;
-  }
-  // setters
-  moveLeft() {
-    this.x -= MOVE_SPEED;
-  }
-  moveRight() {
-    this.x += MOVE_SPEED;
-  }
-  moveUp() {
-    this.y -= MOVE_SPEED;
-  }
-  moveDown() {
-    this.y += MOVE_SPEED;
+    this.xVel = 0;
+    this.yVel = 0;
   }
 
-  // getters
+  moveLeft(xVel) {
+    this.xVel = xVel;
+    this.x += this.xVel;
+  }
+  moveRight(xVel) {
+    this.xVel = xVel;
+    this.x += this.xVel;
+  }
+  moveUp(yVel) {
+    this.yVel = yVel;
+    this.y += this.yVel;
+  }
+  moveDown(yVel) {
+    this.yVel = yVel;
+    this.y += this.yVel;
+  }
+
+  moveX() {
+    this.x += this.xVel;
+  }
+  moveY() {
+    this.y += this.yVel;
+  }
+  updatePoz() {
+    this.yVel *= friction;
+    this.xVel *= friction;
+
+    this.moveX();
+    this.moveY();
+  }
   getX() {
     return this.x;
   }

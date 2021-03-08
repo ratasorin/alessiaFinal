@@ -2,6 +2,7 @@ import { gameStarter } from "./game";
 import "./style.scss";
 import Rectangle from "./rectangle";
 import { FRAME_DURATION } from "./constants";
+import { activate } from "./controls";
 
 let newRect = new Rectangle(0, 0, 100, 100);
 
@@ -55,4 +56,7 @@ gameStarter.then((value) => {
 
   // initalizing the engine loop
   requestAnimationFrame(frame);
+
+  // initiating the event listener
+  activate(window);
 });

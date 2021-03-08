@@ -1,5 +1,6 @@
 import { promise } from "./gamechoser";
-import { OFFSET_X, OFFSET_Y } from "./constants";
+import { OFFSET_X, OFFSET_Y, ACC } from "./constants";
+import { left, right, up, down } from "./controls";
 /**
  * **defaultProps** contains the default values for instantiating
  * a new game
@@ -51,8 +52,19 @@ export default class Game {
    * that will be animated
    */
   update(newRect) {
-    newRect.moveDown();
-    newRect.moveRight();
+    if (up.pressed == 1) {
+      newRect.moveUp(-ACC);
+    }
+    if (down.pressed == 1) {
+      newRect.moveDown(ACC);
+    }
+    if (right.pressed == 1) {
+      newRect.moveRight(ACC);
+    }
+    if (left.pressed == 1) {
+      newRect.moveLeft(-ACC);
+    }
+    newRect.updatePoz();
   }
   /**
    * The **render** function is responsible fo displaying
